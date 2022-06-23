@@ -8,15 +8,15 @@ BowlingGame game = new BowlingGame();
 ```
 ### Fill up the scoresheet
 ```java
-game.openFrame(fistThrow, secondThrow);
-game.spare(firstThrow, secondThrow);
+game.openFrame(int fistThrow, int secondThrow);
+game.spare(int firstThrow, int secondThrow);
 game.strike();
-game.bonusRoll();
+game.bonusRoll(int bonusThrow);
 ```
 ### Use the StringToBowlingGame to convert a string score to BowlingGame object
 ```java
 String score1 = "X X X X X X X X X X XX";
-        String score2 = "43 44 5/ 6/ X 5/ X 72 10 3/ 9";
-        String score3 = "8/ X 3/ 4/ X 5/ 0/ 5/ 3/ X 64";
-        BowlingGame game = StringToBowlingGame.getBowlingGame(score[1|2|3]);
+String score2 = "43 44 5/ 6/ X 5/ X 72 10 3/ 9";
+String score3 = "8/ X 3/ 4/ X 5/ 0/ 5/ 3/ X 64";
+BowlingGame game = StringToBowlingGame.getBowlingGame(score[1|2|3]);
 ```

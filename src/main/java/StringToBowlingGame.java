@@ -1,12 +1,8 @@
 public class StringToBowlingGame {
 
-    String[] rolls;
+    public static BowlingGame getBowlingGame(String stringRolls){
+        String[] rolls = stringRolls.split("\s+");
 
-    public StringToBowlingGame(String rolls){
-        this.rolls = rolls.split("\s+");
-    }
-
-    public BowlingGame getBowlingGame(){
         BowlingGame game = new BowlingGame();
 
         for(int i = 0; i < 10; i++){
@@ -26,12 +22,12 @@ public class StringToBowlingGame {
             }
         }
 
-        bonusRolls(game);
+        bonusRolls(game, rolls);
 
         return game;
     }
 
-    private void bonusRolls(BowlingGame game){
+    private static void bonusRolls(BowlingGame game, String[] rolls){
         String bonus;
         if(rolls[9].equals("X")){
             bonus = rolls[10];

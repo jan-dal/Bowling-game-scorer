@@ -83,8 +83,7 @@ class BowlingGameTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/TestSource.csv")
     void totalScore(String rolls, int score) {
-        StringToBowlingGame converter = new StringToBowlingGame(rolls);
-        BowlingGame game = converter.getBowlingGame();
+        BowlingGame game = StringToBowlingGame.getBowlingGame(rolls);
         assertEquals(score, game.totalScore());
     }
 }
